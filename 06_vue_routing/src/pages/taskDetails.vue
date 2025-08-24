@@ -31,6 +31,7 @@ export default {
 		fakeApiCall(taskId) {
 			return new Promise((resolve, reject) => {
 				setTimeout(() => {
+					// array find method to find task by matching id
 					const task = localData.find((t) => t.id == taskId);
 					if (task) {
 						resolve(task);
