@@ -47,24 +47,24 @@ export default {
 	},
 	computed: {
 		...mapState({
-			counter: (state) => state.counter,
-			employeeList: (state) => state.employeeList,
+			counter: (state) => state.counterStore.counter,
+			employeeList: (state) => state.info.employeeList,
 		}),
-		...mapGetters(["greetMsg"]),
+		...mapGetters({ greetMsg: "info/greetMsg" }),
 	},
 	methods: {
 		handleCounter1() {
-			this.$store.commit("increment");
+			this.$store.commit("counterStore/increment");
 		},
 		handleCounterValue1() {
-			this.$store.commit("setCounter", 20);
+			this.$store.commit("counterStore/setCounter", 20);
 		},
 		updateStudent1() {
-			this.$store.commit("setStudentName", this.student);
+			this.$store.commit("info/setStudentName", this.student);
 			this.student = "";
 		},
 		saveEmployee() {
-			this.$store.dispatch("storeEmployee", this.employee);
+			this.$store.dispatch("info/storeEmployee", this.employee);
 			this.employee = "";
 		},
 	},
