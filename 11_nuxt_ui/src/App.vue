@@ -19,6 +19,7 @@
 					<h1>This is my drawer</h1>
 				</template>
 			</UDrawer>
+			<div><p>anagha is working</p></div>
 			<UButton @click="isDrawerOpen = !isDrawerOpen">Toggle Drawer</UButton>
 		</div>
 	</UApp>
